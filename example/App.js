@@ -3,7 +3,7 @@ import { View, ScrollView, StyleSheet } from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { Appbar, DefaultTheme, List } from 'react-native-paper';
-import Backdrop from 'react-native-material-backdrop-modal';
+import Backdrop from '../src/Backdrop';
 import { MaterialIcons } from '@expo/vector-icons';
 
 const HomeScreen = ({ navigation }) => {
