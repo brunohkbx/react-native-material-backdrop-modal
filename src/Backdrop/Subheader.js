@@ -18,6 +18,7 @@ const Subheader = ({ disabled, onPress, icon, showIcon, title }) => {
             centered
             style={styles.icon}
             background={Touchable.Ripple('rgba(0, 0, 0, 0.2)', true)}
+            testID="icon"
           >
             {icon}
           </Touchable>

@@ -53,9 +53,12 @@ const Backdrop = ({ children, focused, onFocus, title, icon }) => {
           icon={icon}
           showIcon={contentVisibility.concealed}
           title={title}
+          testID="subheader"
         />
         {children && contentVisibility.displayChildren && (
-          <View style={styles.contentContainer}>{children}</View>
+          <View style={styles.contentContainer} testID="children">
+            {children}
+          </View>
         )}
       </View>
     </View>
