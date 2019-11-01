@@ -12,9 +12,9 @@ import Subheader from './Subheader';
 
 const Backdrop = ({ children, focused, onFocus, title, icon }) => {
   const [contentVisibility, setContentVisibility] = useState({
-    alignItems: 'stretch',
-    displayChildren: true,
-    concealed: false,
+    alignItems: focused ? 'stretch' : 'flex-end',
+    displayChildren: focused,
+    concealed: !focused,
   });
 
   useEffect(() => {
