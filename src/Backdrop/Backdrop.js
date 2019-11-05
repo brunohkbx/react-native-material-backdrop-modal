@@ -5,6 +5,7 @@ import {
   StyleSheet,
   UIManager,
   View,
+  InteractionManager,
 } from 'react-native';
 import PropTypes from 'prop-types';
 import useUpdateEffect from 'react-use/lib/useUpdateEffect';
@@ -27,21 +28,27 @@ const Backdrop = ({ children, focused, onFocus, title, icon }) => {
   }, []);
 
   useUpdateEffect(() => {
-    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+    InteractionManager.runAfterInteractions(() => {
+      LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
 
-    if (focused) {
-      setContentVisibility({
-        alignItems: 'stretch',
-        displayChildren: true,
-        concealed: false,
-      });
-    } else {
-      setContentVisibility({
-        alignItems: 'flex-end',
-        displayChildren: false,
-        concealed: true,
-      });
-    }
+      if (focused) {
+        setContentVisibility({
+          alignItems: 'stretch',
+          displayChildren: true,
+          concealed: false,
+        });
+      } else {
+        InteractionManager.runAfterInteractions(() => {
+          LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+
+          setContentVisibility({
+            alignItems: 'flex-end',
+            displayChildren: false,
+            concealed: true,
+          });
+        });
+      }
+    });
   }, [focused]);
 
   return (
