@@ -3,8 +3,8 @@ import { View, ScrollView, StyleSheet } from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { Appbar, DefaultTheme, List } from 'react-native-paper';
-import Backdrop from '../src/Backdrop';
 import { MaterialIcons } from '@expo/vector-icons';
+import Backdrop from '../src/Backdrop';
 
 const HomeScreen = ({ navigation }) => {
   const [focusedBackdrop, setFocusedBackdrop] = useState(true);
@@ -117,7 +117,7 @@ const HomeScreen = ({ navigation }) => {
 HomeScreen.navigationOptions = ({ navigation }) => ({
   headerLeft: (
     <Appbar.Action
-      icon={navigation.getParam('focusedBackdrop') ? 'close' : 'menu'}
+      icon={navigation.getParam('focusedBackdrop') ? 'menu' : 'close'}
       color="#FFF"
       onPress={navigation.getParam('showCategories')}
     />
