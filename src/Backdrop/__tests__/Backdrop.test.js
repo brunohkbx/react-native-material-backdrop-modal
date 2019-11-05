@@ -27,6 +27,8 @@ describe('Backdrop', () => {
     return { element, wrapper };
   };
 
+  beforeAll(() => jest.useFakeTimers());
+
   describe('When updating from focused to unfocused', () => {
     it('does not renders its children anymore', () => {
       const {
@@ -36,6 +38,7 @@ describe('Backdrop', () => {
 
       const { element: updatedElement } = setup({ focused: false });
       update(updatedElement);
+      jest.runAllTimers();
 
       expect(() => getByTestId('children')).toThrow();
     });
@@ -50,6 +53,7 @@ describe('Backdrop', () => {
 
       const { element: updatedElement } = setup({ focused: true });
       update(updatedElement);
+      jest.runAllTimers();
 
       expect(getByTestId('children')).toBeDefined();
     });
