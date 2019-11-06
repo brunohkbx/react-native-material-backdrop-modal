@@ -38,14 +38,10 @@ const Backdrop = ({ children, focused, onFocus, title, icon }) => {
           concealed: false,
         });
       } else {
-        InteractionManager.runAfterInteractions(() => {
-          LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
-
-          setContentVisibility({
-            alignItems: 'flex-end',
-            displayChildren: false,
-            concealed: true,
-          });
+        setContentVisibility({
+          alignItems: 'flex-end',
+          displayChildren: false,
+          concealed: true,
         });
       }
     });
