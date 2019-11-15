@@ -20,7 +20,8 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "react-hooks"
     ],
     "rules": {
         "react/jsx-filename-extension": "off",
@@ -34,6 +35,8 @@
         "no-use-before-define": "off",
         "react/jsx-props-no-spreading": "off",
         "react/prop-types": ["error", { "ignore": ["navigation"] }],
-        "react/jsx-wrap-multilines": ["error", { "prop": "ignore" }]
+        "react/jsx-wrap-multilines": ["error", { "prop": "ignore" }],
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn"
     }
 }
