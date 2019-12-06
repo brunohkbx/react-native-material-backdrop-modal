@@ -5,7 +5,6 @@ import {
   StyleSheet,
   UIManager,
   View,
-  InteractionManager,
 } from 'react-native';
 import PropTypes from 'prop-types';
 import useUpdateEffect from 'react-use/lib/useUpdateEffect';
@@ -13,9 +12,9 @@ import Subheader from './Subheader';
 
 const Backdrop = ({ children, focused, onFocus, title, icon }) => {
   const [contentVisibility, setContentVisibility] = useState({
-    alignItems: focused ? 'stretch' : 'flex-end',
-    displayChildren: focused,
-    concealed: !focused,
+    revealed: !focused,
+    height: focused ? '100%' : 0,
+    opacity: focused ? 1 : 0,
   });
 
   useEffect(() => {
@@ -28,41 +27,43 @@ const Backdrop = ({ children, focused, onFocus, title, icon }) => {
   }, []);
 
   useUpdateEffect(() => {
-    InteractionManager.runAfterInteractions(() => {
-      LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
 
-      if (focused) {
-        setContentVisibility({
-          alignItems: 'stretch',
-          displayChildren: true,
-          concealed: false,
-        });
-      } else {
-        setContentVisibility({
-          alignItems: 'flex-end',
-          displayChildren: false,
-          concealed: true,
-        });
-      }
-    });
+    if (focused) {
+      setContentVisibility({
+        revealed: false,
+        height: '100%',
+        opacity: 1,
+      });
+    } else {
+      setContentVisibility({
+        revealed: true,
+        height: 0,
+        opacity: 0,
+      });
+    }
   }, [focused]);
 
   return (
-    <View style={[styles.modal, { alignItems: contentVisibility.alignItems }]}>
+    <View style={styles.overlay}>
       <View style={styles.backdrop}>
         <Subheader
           disabled={focused}
           onPress={onFocus}
           icon={icon}
-          showIcon={contentVisibility.concealed}
+          showIcon={contentVisibility.revealed}
           title={title}
           testID="subheader"
         />
-        {children && contentVisibility.displayChildren && (
-          <View style={styles.contentContainer} testID="children">
-            {children}
-          </View>
-        )}
+        <View
+          style={{
+            height: contentVisibility.height,
+            opacity: contentVisibility.opacity,
+          }}
+          testID="childrenWrapper"
+        >
+          <View style={[styles.children]}>{children}</View>
+        </View>
       </View>
     </View>
   );
@@ -83,18 +84,17 @@ Backdrop.defaultProps = {
 };
 
 const styles = StyleSheet.create({
-  modal: {
-    flex: 1,
-    flexDirection: 'row',
+  overlay: {
     ...StyleSheet.absoluteFill,
+    justifyContent: 'flex-end',
   },
   backdrop: {
     backgroundColor: '#FFF',
-    flex: 1,
     borderTopLeftRadius: 16,
     borderTopRightRadius: 16,
+    maxHeight: '100%',
   },
-  contentContainer: {
+  children: {
     marginHorizontal: 16,
     paddingVertical: 12,
   },
