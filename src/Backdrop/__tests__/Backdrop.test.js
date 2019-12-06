@@ -3,8 +3,10 @@ import { View, Text } from 'react-native';
 import { fireEvent, render } from 'react-native-testing-library';
 import Backdrop from '../Backdrop';
 
-jest.mock('react-native/Libraries/Animated/src/NativeAnimatedHelper');
-jest.mock('react-native/Libraries/LayoutAnimation/LayoutAnimation');
+jest.mock('react-native-reanimated', () =>
+  // eslint-disable-next-line global-require
+  require('react-native-reanimated/mock')
+);
 
 describe('Backdrop', () => {
   const setup = (propOverrides = {}) => {
@@ -29,34 +31,10 @@ describe('Backdrop', () => {
 
   beforeAll(() => jest.useFakeTimers());
 
-  describe('When updating from focused to unfocused', () => {
-    it('does not renders its children anymore', () => {
-      const {
-        wrapper: { getByTestId, update },
-      } = setup({ focused: true });
-      expect(getByTestId('children')).toBeDefined();
+  it('renders properly', () => {
+    const { wrapper } = setup();
 
-      const { element: updatedElement } = setup({ focused: false });
-      update(updatedElement);
-      jest.runAllTimers();
-
-      expect(() => getByTestId('children')).toThrow();
-    });
-  });
-
-  describe('When updating from unfocused to focused', () => {
-    it('properly renders with its children', () => {
-      const {
-        wrapper: { getByTestId, update },
-      } = setup({ focused: false });
-      expect(() => getByTestId('children')).toThrow();
-
-      const { element: updatedElement } = setup({ focused: true });
-      update(updatedElement);
-      jest.runAllTimers();
-
-      expect(getByTestId('children')).toBeDefined();
-    });
+    expect(wrapper).toMatchSnapshot();
   });
 
   describe('onFocus', () => {

@@ -4467,6 +4467,11 @@ react-native-gesture-handler@~1.3.0:
     invariant "^2.2.2"
     prop-types "^15.5.10"
 
+react-native-hooks@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/react-native-hooks/-/react-native-hooks-0.9.0.tgz#589fc2390296d9afe03327298dabcf0a1f350910"
+  integrity sha512-yqSAH0zxqjYHYPo6mPut3dEROoB5qMvsAbN3EK0MDQrWA5zdqmzgTEpS9/qwXaIyllk6hQbHxYnRTWq2uq4tJQ==
+
 react-native-paper@^2.16.0:
   version "2.16.0"
   resolved "https://registry.yarnpkg.com/react-native-paper/-/react-native-paper-2.16.0.tgz#5a9edd5615bb010ec0d29cbfd5524c2944b2505d"
@@ -4484,10 +4489,10 @@ react-native-platform-touchable@^1.1.1:
   resolved "https://registry.yarnpkg.com/react-native-platform-touchable/-/react-native-platform-touchable-1.1.1.tgz#fde4acc65eea585d28b164d0c3716a42129a68e4"
   integrity sha1-/eSsxl7qWF0osWTQw3FqQhKaaOQ=
 
-react-native-reanimated@~1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-1.2.0.tgz#9219227a52a5dfa4d34c324596d6726ccd874293"
-  integrity sha512-vkWRHrPK5qfHP/ZawlRoo38oeYe9NZaaOH/lmFxRcsKzaSK6x3H5ZPXI8lK6MfTLveqwo1QhJje3zIKXO4nQQw==
+react-native-reanimated@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-1.4.0.tgz#7f1acbf9be08492d834f512700570978052be2f9"
+  integrity sha512-tO7nSNNP+iRLVbkcSS5GXyDBb7tSI02+XuRL3/S39EAr35rnvUy2JfeLUQG+fWSObJjnMVhasUDEUwlENk8IXw==
 
 react-native-safe-area-view@^0.12.0:
   version "0.12.0"
@@ -4623,9 +4628,9 @@ react-transform-hmr@^1.0.4:
     react-proxy "^1.1.7"
 
 react-use@^13.2.1:
-  version "13.2.1"
-  resolved "https://registry.yarnpkg.com/react-use/-/react-use-13.2.1.tgz#95ea7f697423f66f06254a3a82820a8f1b74a9e5"
-  integrity sha512-GgC9SH8Fx01B27whvbLYclsk5i9nETgxRHzpPH6PkKITohg0pPAfRfxiglSjdJO6jXDzDRJvayxpdvANodw2Lg==
+  version "13.8.0"
+  resolved "https://registry.yarnpkg.com/react-use/-/react-use-13.8.0.tgz#5e8badaaa5614a1925fd28ad22d01cc1c52e0ff1"
+  integrity sha512-J4ZWIqC1h2eSS6ObmHJUWDQeJSKZvHdBEINCu51plz7RS+ijrt6JEHfDWbNXx+aAoR5AmbRK+mzYwd3jiu3xpA==
   dependencies:
     copy-to-clipboard "^3.2.0"
     nano-css "^5.2.1"

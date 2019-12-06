@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Backdrop renders properly 1`] = `
+<View
+  onLayout={[Function]}
+  style={
+    Array [
+      Object {
+        "bottom": 0,
+        "justifyContent": "flex-end",
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#FFF",
+          "borderTopLeftRadius": 16,
+          "borderTopRightRadius": 16,
+          "maxHeight": "100%",
+        },
+      ]
+    }
+  >
+    <View
+      accessible={true}
+      focusable={true}
+      isTVSelectable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "height": 48,
+          "opacity": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "borderBottomColor": "rgba(0, 0, 0, 0.12)",
+            "borderBottomWidth": 0.5,
+            "marginHorizontal": 16,
+            "paddingVertical": 12,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "rgba(0, 0, 0, 0.87)",
+              "fontFamily": "sans-serif",
+              "fontSize": 16,
+              "lineHeight": 24,
+            }
+          }
+        >
+          Movies
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "height": undefined,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "marginHorizontal": 16,
+            "paddingVertical": 12,
+          }
+        }
+      >
+        <View>
+          <Text>
+            Movie 1
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;

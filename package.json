@@ -22,7 +22,9 @@
   ],
   "author": "Bruno Fernandes de Castro",
   "license": "MIT",
-  "files": ["/src"],
+  "files": [
+    "/src"
+  ],
   "devDependencies": {
     "@babel/core": "^7.6.2",
     "@babel/runtime": "^7.6.2",
@@ -48,7 +50,9 @@
   },
   "dependencies": {
     "prop-types": "^15.7.2",
+    "react-native-hooks": "^0.9.0",
     "react-native-platform-touchable": "^1.1.1",
+    "react-native-reanimated": "^1.4.0",
     "react-use": "^12.2.2"
   },
   "jest": {
