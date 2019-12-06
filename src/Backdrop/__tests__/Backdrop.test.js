@@ -27,35 +27,35 @@ describe('Backdrop', () => {
     return { element, wrapper };
   };
 
-  beforeAll(() => jest.useFakeTimers());
-
   describe('When updating from focused to unfocused', () => {
-    it('does not renders its children anymore', () => {
+    it("changes the childrenWrapper's height", () => {
       const {
         wrapper: { getByTestId, update },
       } = setup({ focused: true });
-      expect(getByTestId('children')).toBeDefined();
 
       const { element: updatedElement } = setup({ focused: false });
       update(updatedElement);
-      jest.runAllTimers();
 
-      expect(() => getByTestId('children')).toThrow();
+      expect(getByTestId('childrenWrapper').props.style).toMatchObject({
+        height: 0,
+        opacity: 0,
+      });
     });
   });
 
   describe('When updating from unfocused to focused', () => {
-    it('properly renders with its children', () => {
+    it("changes the childrenWrapper's height", () => {
       const {
         wrapper: { getByTestId, update },
       } = setup({ focused: false });
-      expect(() => getByTestId('children')).toThrow();
 
       const { element: updatedElement } = setup({ focused: true });
       update(updatedElement);
-      jest.runAllTimers();
 
-      expect(getByTestId('children')).toBeDefined();
+      expect(getByTestId('childrenWrapper').props.style).toMatchObject({
+        height: '100%',
+        opacity: 1,
+      });
     });
   });
 
