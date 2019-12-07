@@ -98,7 +98,7 @@ const HomeScreen = ({ navigation }) => {
       </ScrollView>
       <Backdrop
         focused={focusedBackdrop}
-        onFocus={focused => setFocusedBackdrop(!focused)}
+        onFocus={() => setFocusedBackdrop(!focusedBackdrop)}
         title="All Products"
         icon={
           focusedBackdrop ? (
