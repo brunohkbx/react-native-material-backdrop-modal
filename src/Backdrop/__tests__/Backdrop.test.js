@@ -60,7 +60,7 @@ describe('Backdrop', () => {
   });
 
   describe('onFocus', () => {
-    it('calls onFocus when pressing on Subheader', () => {
+    it('calls onFocus when pressing on Subheader with the current backdrop status', () => {
       const mockOnFocus = jest.fn();
       const {
         wrapper: { getByTestId },
@@ -68,7 +68,7 @@ describe('Backdrop', () => {
 
       fireEvent.press(getByTestId('subheader'));
 
-      expect(mockOnFocus).toHaveBeenCalled();
+      expect(mockOnFocus).toHaveBeenCalledWith(false);
     });
 
     it("calls onFocus when pressing on Subheader's icon", () => {
@@ -79,7 +79,7 @@ describe('Backdrop', () => {
 
       fireEvent.press(getByTestId('icon'));
 
-      expect(mockOnFocus).toHaveBeenCalled();
+      expect(mockOnFocus).toHaveBeenCalledWith(false);
     });
   });
 });

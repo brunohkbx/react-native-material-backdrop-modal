@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import Touchable from 'react-native-platform-touchable';
 import PropTypes from 'prop-types';
 
-const Subheader = ({ disabled, onPress, icon, showIcon, title }) => {
+const Subheader = ({ disabled, onPress, icon, title }) => {
   return (
     <Touchable
       disabled={disabled}
@@ -12,7 +12,7 @@ const Subheader = ({ disabled, onPress, icon, showIcon, title }) => {
     >
       <View style={styles.headerContainer}>
         <Text style={styles.title}>{title}</Text>
-        {icon && showIcon && (
+        {icon && (
           <Touchable
             onPress={onPress}
             centered
@@ -32,14 +32,12 @@ Subheader.propTypes = {
   disabled: PropTypes.bool,
   onPress: PropTypes.func.isRequired,
   icon: PropTypes.element,
-  showIcon: PropTypes.bool,
   title: PropTypes.string.isRequired,
 };
 
 Subheader.defaultProps = {
   disabled: false,
   icon: null,
-  showIcon: false,
 };
 
 const styles = StyleSheet.create({
