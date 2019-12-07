@@ -98,9 +98,15 @@ const HomeScreen = ({ navigation }) => {
       </ScrollView>
       <Backdrop
         focused={focusedBackdrop}
-        onFocus={() => setFocusedBackdrop(true)}
+        onFocus={focused => setFocusedBackdrop(!focused)}
         title="All Products"
-        icon={<MaterialIcons name="keyboard-arrow-up" size={24} color="#000" />}
+        icon={
+          focusedBackdrop ? (
+            <MaterialIcons name="keyboard-arrow-down" size={24} color="#000" />
+          ) : (
+            <MaterialIcons name="keyboard-arrow-up" size={24} color="#000" />
+          )
+        }
       >
         <ScrollView>
           <List.Item title="Product 1" />

@@ -49,9 +49,8 @@ const Backdrop = ({ children, focused, onFocus, title, icon }) => {
       <View style={styles.backdrop}>
         <Subheader
           disabled={focused}
-          onPress={onFocus}
+          onPress={() => onFocus(focused)}
           icon={icon}
-          showIcon={contentVisibility.revealed}
           title={title}
           testID="subheader"
         />
