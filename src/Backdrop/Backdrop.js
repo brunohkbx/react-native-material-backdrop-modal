@@ -49,7 +49,7 @@ const Backdrop = ({ children, focused, onFocus, title, icon }) => {
       <View style={styles.backdrop}>
         <Subheader
           disabled={focused}
-          onPress={() => onFocus(focused)}
+          onPress={onFocus}
           icon={icon}
           title={title}
           testID="subheader"
