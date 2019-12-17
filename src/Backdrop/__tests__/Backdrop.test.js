@@ -28,7 +28,7 @@ describe('Backdrop', () => {
   };
 
   describe('When updating from focused to unfocused', () => {
-    it("changes the childrenWrapper's height", () => {
+    it("changes the backdrop's flex property", () => {
       const {
         wrapper: { getByTestId, update },
       } = setup({ focused: true });
@@ -36,15 +36,14 @@ describe('Backdrop', () => {
       const { element: updatedElement } = setup({ focused: false });
       update(updatedElement);
 
-      expect(getByTestId('childrenWrapper').props.style).toMatchObject({
-        height: 0,
-        opacity: 0,
+      expect(getByTestId('backdrop').props.style).toContainEqual({
+        flex: 0,
       });
     });
   });
 
   describe('When updating from unfocused to focused', () => {
-    it("changes the childrenWrapper's height", () => {
+    it("changes the backdrop's flex property", () => {
       const {
         wrapper: { getByTestId, update },
       } = setup({ focused: false });
@@ -52,9 +51,8 @@ describe('Backdrop', () => {
       const { element: updatedElement } = setup({ focused: true });
       update(updatedElement);
 
-      expect(getByTestId('childrenWrapper').props.style).toMatchObject({
-        height: '100%',
-        opacity: 1,
+      expect(getByTestId('backdrop').props.style).toContainEqual({
+        flex: 1,
       });
     });
   });

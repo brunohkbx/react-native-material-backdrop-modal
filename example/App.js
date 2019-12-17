@@ -114,6 +114,12 @@ const HomeScreen = ({ navigation }) => {
           <List.Item title="Product 3" />
           <List.Item title="Product 4" />
           <List.Item title="Product 5" />
+          <List.Item title="Product 6" />
+          <List.Item title="Product 7" />
+          <List.Item title="Product 8" />
+          <List.Item title="Product 9" />
+          <List.Item title="Product 10" />
+          <List.Item title="Product 11" />
         </ScrollView>
       </Backdrop>
     </View>
