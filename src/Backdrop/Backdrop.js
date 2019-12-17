@@ -13,8 +13,7 @@ import Subheader from './Subheader';
 const Backdrop = ({ children, focused, onFocus, title, icon }) => {
   const [contentVisibility, setContentVisibility] = useState({
     revealed: !focused,
-    height: focused ? '100%' : 0,
-    opacity: focused ? 1 : 0,
+    flex: focused ? 1 : 0,
   });
 
   useEffect(() => {
@@ -32,21 +31,22 @@ const Backdrop = ({ children, focused, onFocus, title, icon }) => {
     if (focused) {
       setContentVisibility({
         revealed: false,
-        height: '100%',
-        opacity: 1,
+        flex: 1,
       });
     } else {
       setContentVisibility({
         revealed: true,
-        height: 0,
-        opacity: 0,
+        flex: 0,
       });
     }
   }, [focused]);
 
   return (
     <View style={styles.overlay}>
-      <View style={styles.backdrop}>
+      <View
+        style={[styles.backdrop, { flex: contentVisibility.flex }]}
+        testID="backdrop"
+      >
         <Subheader
           disabled={focused}
           onPress={onFocus}
@@ -56,12 +56,10 @@ const Backdrop = ({ children, focused, onFocus, title, icon }) => {
         />
         <View
           style={{
-            height: contentVisibility.height,
-            opacity: contentVisibility.opacity,
+            flex: 1,
           }}
-          testID="childrenWrapper"
         >
-          <View style={[styles.children]}>{children}</View>
+          <View style={styles.children}>{children}</View>
         </View>
       </View>
     </View>
@@ -91,7 +89,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFF',
     borderTopLeftRadius: 16,
     borderTopRightRadius: 16,
-    maxHeight: '100%',
   },
   children: {
     marginHorizontal: 16,
