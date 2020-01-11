@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 import useUpdateEffect from 'react-use/lib/useUpdateEffect';
 import Subheader from './Subheader';
 
-const Backdrop = ({ children, focused, onFocus, title, icon }) => {
+const Backdrop = ({ children, focused, onFocus, title, icon, preset }) => {
   const [contentVisibility, setContentVisibility] = useState({
     revealed: !focused,
     flex: focused ? 1 : 0,
@@ -26,7 +26,7 @@ const Backdrop = ({ children, focused, onFocus, title, icon }) => {
   }, []);
 
   useUpdateEffect(() => {
-    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+    LayoutAnimation.configureNext(preset);
 
     if (focused) {
       setContentVisibility({
@@ -72,12 +72,15 @@ Backdrop.propTypes = {
   onFocus: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
   icon: PropTypes.element,
+  // eslint-disable-next-line react/forbid-prop-types
+  preset: PropTypes.object,
 };
 
 Backdrop.defaultProps = {
   children: null,
   focused: true,
   icon: null,
+  preset: LayoutAnimation.Presets.easeInEaseOut,
 };
 
 const styles = StyleSheet.create({
