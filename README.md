@@ -37,3 +37,4 @@ yarn start
 | onFocus           |                      | Function        | The Handler that's emitted every time the user conceals the back layer.                                                                                                                          |
 | title         |  | string        | The Subheader title                                                                                                                             |
 | icon | | element | Icon to be used on the Subheader
+| preset | easeInEaseOut | object | Animation configs to pass into configureNext
