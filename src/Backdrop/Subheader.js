@@ -19,6 +19,7 @@ const Subheader = ({ disabled, onPress, icon, title }) => {
             style={styles.icon}
             background={Touchable.Ripple('rgba(0, 0, 0, 0.2)', true)}
             testID="icon"
+            hitSlop={{ top: 20, left: 20, bottom: 20, right: 20 }}
           >
             {icon}
           </Touchable>
