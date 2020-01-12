@@ -2,7 +2,12 @@ const path = require('path');
 const blacklist = require('metro-config/src/defaults/blacklist');
 const pak = require('../package.json');
 
-const dependencies = Object.keys(pak.dependencies);
+const modules = [
+  '@babel/runtime',
+  '@expo/vector-icons',
+  ...Object.keys(pak.dependencies),
+  ...Object.keys(pak.peerDependencies),
+];
 
 module.exports = {
   projectRoot: __dirname,
@@ -14,11 +19,9 @@ module.exports = {
         `^${escape(path.resolve(__dirname, '..', 'node_modules'))}\\/.*$`
       ),
     ]),
-    providesModuleNodeModules: [
-      'react-native',
-      'react',
-      '@babel/runtime',
-      ...dependencies,
-    ],
+    extraNodeModules: modules.reduce((acc, name) => {
+      acc[name] = path.join(__dirname, 'node_modules', name);
+      return acc;
+    }, {}),
   },
 };
