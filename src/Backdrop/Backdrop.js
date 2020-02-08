@@ -10,7 +10,15 @@ import PropTypes from 'prop-types';
 import useUpdateEffect from 'react-use/lib/useUpdateEffect';
 import Subheader from './Subheader';
 
-const Backdrop = ({ children, focused, onFocus, title, icon, preset }) => {
+const Backdrop = ({
+  children,
+  focused,
+  onFocus,
+  title,
+  icon,
+  preset,
+  titleStyle,
+}) => {
   const [contentVisibility, setContentVisibility] = useState({
     revealed: !focused,
     flex: focused ? 1 : 0,
@@ -52,6 +60,7 @@ const Backdrop = ({ children, focused, onFocus, title, icon, preset }) => {
           onPress={onFocus}
           icon={icon}
           title={title}
+          titleStyle={titleStyle}
           testID="subheader"
         />
         <View
@@ -72,8 +81,8 @@ Backdrop.propTypes = {
   onFocus: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
   icon: PropTypes.element,
-  // eslint-disable-next-line react/forbid-prop-types
   preset: PropTypes.object,
+  titleStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 };
 
 Backdrop.defaultProps = {
@@ -81,6 +90,7 @@ Backdrop.defaultProps = {
   focused: true,
   icon: null,
   preset: LayoutAnimation.Presets.easeInEaseOut,
+  titleStyle: {},
 };
 
 const styles = StyleSheet.create({

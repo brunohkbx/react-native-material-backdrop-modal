@@ -37,6 +37,7 @@
         "react/prop-types": ["error", { "ignore": ["navigation"] }],
         "react/jsx-wrap-multilines": ["error", { "prop": "ignore" }],
         "react-hooks/rules-of-hooks": "error",
-        "react-hooks/exhaustive-deps": "warn"
+        "react-hooks/exhaustive-deps": "warn",
+        "react/forbid-prop-types": "off"
     }
 }
