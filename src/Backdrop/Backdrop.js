@@ -19,10 +19,7 @@ const Backdrop = ({
   preset,
   titleStyle,
 }) => {
-  const [contentVisibility, setContentVisibility] = useState({
-    revealed: !focused,
-    flex: focused ? 1 : 0,
-  });
+  const [flex, setFlex] = useState(focused ? 1 : 0);
 
   useEffect(() => {
     if (
@@ -37,24 +34,15 @@ const Backdrop = ({
     LayoutAnimation.configureNext(preset);
 
     if (focused) {
-      setContentVisibility({
-        revealed: false,
-        flex: 1,
-      });
+      setFlex(1);
     } else {
-      setContentVisibility({
-        revealed: true,
-        flex: 0,
-      });
+      setFlex(0);
     }
   }, [focused]);
 
   return (
     <View style={styles.overlay}>
-      <View
-        style={[styles.backdrop, { flex: contentVisibility.flex }]}
-        testID="backdrop"
-      >
+      <View style={[styles.backdrop, { flex }]} testID="backdrop">
         <Subheader
           disabled={focused}
           onPress={onFocus}
