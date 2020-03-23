@@ -24,7 +24,7 @@
   "license": "MIT",
   "files": ["/src"],
   "devDependencies": {
-    "@babel/core": "^7.8.4",
+    "@babel/core": "^7.8.6",
     "@babel/runtime": "^7.8.0",
     "eslint": "^6.5.1",
     "eslint-config-airbnb": "^18.0.1",
