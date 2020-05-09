@@ -38,4 +38,5 @@ yarn start
 | title         |  | string        | The Subheader title                                                                                                                             |
 | icon | | element | Icon to be used on the Subheader
 | preset | easeInEaseOut | object | Animation configs to pass into configureNext
-| titleStyle | {} | object or array | Style for the subheader title
+| titleStyle | {} | object | Style for the subheader title
+| backdropStyle |{} | object | Style for the backdrop
