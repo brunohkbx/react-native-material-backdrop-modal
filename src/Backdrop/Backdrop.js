@@ -41,7 +41,7 @@ const Backdrop = ({
   }, [focused]);
 
   return (
-    <View style={styles.overlay}>
+    <View pointerEvents="box-none" style={styles.overlay}>
       <View style={[styles.backdrop, { flex }]} testID="backdrop">
         <Subheader
           disabled={focused}
