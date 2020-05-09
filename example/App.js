@@ -107,6 +107,7 @@ const HomeScreen = ({ navigation }) => {
             <MaterialIcons name="keyboard-arrow-up" size={24} color="#000" />
           )
         }
+        backdropStyle={styles.backdropStyle}
       >
         <ScrollView>
           <List.Item title="Product 1" />
@@ -158,6 +159,9 @@ const styles = StyleSheet.create({
   },
   listTitle: {
     color: '#FFF',
+  },
+  backdropStyle: {
+    backgroundColor: '#F4F4F5',
   },
 });
 

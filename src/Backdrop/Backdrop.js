@@ -18,6 +18,7 @@ const Backdrop = ({
   icon,
   preset,
   titleStyle,
+  backdropStyle,
 }) => {
   const [flex, setFlex] = useState(focused ? 1 : 0);
 
@@ -42,7 +43,10 @@ const Backdrop = ({
 
   return (
     <View pointerEvents="box-none" style={styles.overlay}>
-      <View style={[styles.backdrop, { flex }]} testID="backdrop">
+      <View
+        style={[styles.backdrop, { flex }, backdropStyle]}
+        testID="backdrop"
+      >
         <Subheader
           disabled={focused}
           onPress={onFocus}
@@ -70,7 +74,8 @@ Backdrop.propTypes = {
   title: PropTypes.string.isRequired,
   icon: PropTypes.element,
   preset: PropTypes.object,
-  titleStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+  titleStyle: PropTypes.object,
+  backdropStyle: PropTypes.object,
 };
 
 Backdrop.defaultProps = {
@@ -79,6 +84,7 @@ Backdrop.defaultProps = {
   icon: null,
   preset: LayoutAnimation.Presets.easeInEaseOut,
   titleStyle: {},
+  backdropStyle: {},
 };
 
 const styles = StyleSheet.create({
@@ -90,6 +96,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFF',
     borderTopLeftRadius: 16,
     borderTopRightRadius: 16,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 1.41,
+    elevation: 2,
   },
   children: {
     marginHorizontal: 16,
