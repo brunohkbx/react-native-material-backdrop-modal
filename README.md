@@ -18,6 +18,8 @@ Material Design "Backdrop" component for Android and iOS.
 ## Usage
 A backdrop appears behind all other surfaces in an app, displaying contextual and actionable content.
 
+![Backdrop](./example/backdrop.png)
+
 See Google's [Material Design guidelines](http://material.io/components/backdrop/) for more info about Backdrops and when to use them.
 
 Check out the example app:
@@ -28,6 +30,8 @@ cd react-native-material-backdrop-modal/example
 yarn
 yarn start
 ```
+
+![Example](./example/example.gif)
 
 ## Props
 | prop                      | default                  | type          | description                                                                                                                                                     |
