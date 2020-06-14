@@ -7,7 +7,6 @@ import {
   View,
 } from 'react-native';
 import PropTypes from 'prop-types';
-import useUpdateEffect from 'react-use/lib/useUpdateEffect';
 import Subheader from './Subheader';
 
 const Backdrop = ({
@@ -31,7 +30,7 @@ const Backdrop = ({
     }
   }, []);
 
-  useUpdateEffect(() => {
+  useEffect(() => {
     LayoutAnimation.configureNext(preset);
 
     if (focused) {
@@ -39,7 +38,7 @@ const Backdrop = ({
     } else {
       setFlex(0);
     }
-  }, [focused]);
+  }, [focused, preset]);
 
   return (
     <View pointerEvents="box-none" style={styles.overlay}>
