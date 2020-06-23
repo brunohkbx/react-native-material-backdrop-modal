@@ -41,6 +41,6 @@ yarn start
 | onFocus           |                      | Function        | The Handler that's emitted every time the user conceals the back layer.                                                                                                                          |
 | title         |  | string        | The Subheader title                                                                                                                             |
 | icon | | element | Icon to be used on the Subheader
-| preset | easeInEaseOut | object | Animation configs to pass into configureNext
+| preset | easeInEaseOut | object | Animation [presets](https://reactnative.dev/docs/layoutanimation#presets) to pass into configureNext
 | titleStyle | {} | object | Style for the subheader title
 | backdropStyle |{} | object | Style for the backdrop
