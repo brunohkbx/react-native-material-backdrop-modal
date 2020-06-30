@@ -9,6 +9,9 @@ const Subheader = ({ disabled, onPress, icon, title, titleStyle }) => {
       disabled={disabled}
       onPress={onPress}
       background={Touchable.Ripple('rgba(0, 0, 0, 0.2)', true)}
+      accessibilityState={{ expanded: disabled }}
+      accessibilityLabel={title}
+      accessibilityRole="button"
     >
       <View style={styles.headerContainer}>
         <Text style={[styles.title, titleStyle]}>{title}</Text>
@@ -20,6 +23,7 @@ const Subheader = ({ disabled, onPress, icon, title, titleStyle }) => {
             background={Touchable.Ripple('rgba(0, 0, 0, 0.2)', true)}
             testID="icon"
             hitSlop={{ top: 20, left: 20, bottom: 20, right: 20 }}
+            accessibilityRole="button"
           >
             {icon}
           </Touchable>
