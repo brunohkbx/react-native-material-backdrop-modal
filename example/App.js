@@ -14,6 +14,7 @@ const HomeScreen = ({ navigation }) => {
       focusedBackdrop,
       showCategories: () => setFocusedBackdrop(!focusedBackdrop),
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [focusedBackdrop]);
 
   return (
@@ -21,28 +22,28 @@ const HomeScreen = ({ navigation }) => {
       <ScrollView>
         <List.Item
           title="TV & Home Theaters"
-          left={props => <List.Icon {...props} color="#FFF" icon="live-tv" />}
+          left={props => (
+            <List.Icon {...props} color="#FFF" icon="television" />
+          )}
           onPress={() => {}}
           titleStyle={styles.listTitle}
         />
         <List.Item
           title="Computers"
-          left={props => <List.Icon {...props} color="#FFF" icon="computer" />}
+          left={props => <List.Icon {...props} color="#FFF" icon="laptop" />}
           onPress={() => {}}
           titleStyle={styles.listTitle}
         />
         <List.Item
           title="Cameras and Camcorders"
-          left={props => (
-            <List.Icon {...props} color="#FFF" icon="photo-camera" />
-          )}
+          left={props => <List.Icon {...props} color="#FFF" icon="camera" />}
           onPress={() => {}}
           titleStyle={styles.listTitle}
         />
         <List.Item
           title="Mobile Phones"
           left={props => (
-            <List.Icon {...props} color="#FFF" icon="phone-android" />
+            <List.Icon {...props} color="#FFF" icon="cellphone-android" />
           )}
           onPress={() => {}}
           titleStyle={styles.listTitle}
@@ -56,16 +57,14 @@ const HomeScreen = ({ navigation }) => {
         <List.Item
           title="Video Games"
           left={props => (
-            <List.Icon {...props} color="#FFF" icon="videogame-asset" />
+            <List.Icon {...props} color="#FFF" icon="google-controller" />
           )}
           onPress={() => {}}
           titleStyle={styles.listTitle}
         />
         <List.Item
           title="Movies"
-          left={props => (
-            <List.Icon {...props} color="#FFF" icon="local-movies" />
-          )}
+          left={props => <List.Icon {...props} color="#FFF" icon="filmstrip" />}
           onPress={() => {}}
           titleStyle={styles.listTitle}
         />
@@ -85,13 +84,15 @@ const HomeScreen = ({ navigation }) => {
         />
         <List.Item
           title="Connected Home"
-          left={props => <List.Icon {...props} color="#FFF" icon="wifi" />}
+          left={props => (
+            <List.Icon {...props} color="#FFF" icon="google-home" />
+          )}
           onPress={() => {}}
           titleStyle={styles.listTitle}
         />
         <List.Item
           title="Toys"
-          left={props => <List.Icon {...props} color="#FFF" icon="toys" />}
+          left={props => <List.Icon {...props} color="#FFF" icon="pinwheel" />}
           onPress={() => {}}
           titleStyle={styles.listTitle}
         />
@@ -128,7 +129,7 @@ const HomeScreen = ({ navigation }) => {
 };
 
 HomeScreen.navigationOptions = ({ navigation }) => ({
-  headerLeft: (
+  headerLeft: () => (
     <Appbar.Action
       icon={navigation.getParam('focusedBackdrop') ? 'menu' : 'close'}
       color="#FFF"

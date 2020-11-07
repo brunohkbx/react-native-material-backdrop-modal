@@ -3,7 +3,6 @@
     "name": "Backdrop",
     "slug": "react-native-material-backdrop-modal",
     "privacy": "public",
-    "sdkVersion": "36.0.0",
     "platforms": [
       "ios",
       "android",
