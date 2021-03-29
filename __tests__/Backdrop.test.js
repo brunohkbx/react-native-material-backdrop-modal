@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { fireEvent, render } from 'react-native-testing-library';
-import Backdrop from '../Backdrop';
+import Backdrop from '../src/Backdrop/Backdrop';
 
 jest.mock('react-native/Libraries/Animated/src/NativeAnimatedHelper');
 jest.mock('react-native/Libraries/LayoutAnimation/LayoutAnimation');
