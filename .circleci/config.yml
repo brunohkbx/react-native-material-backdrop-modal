@@ -1,4 +1,3 @@
-version: 2
 jobs:
   build:
     docker:
@@ -10,7 +9,6 @@ jobs:
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
-            # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
       - run:
@@ -29,3 +27,31 @@ jobs:
       - run:
           name: Run tests
           command: yarn test --maxWorkers=2 --coverage
+
+  release:
+    docker:
+      - image: circleci/node:dubnium
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
+
+      - run:
+          name: release
+          command: npm run semantic-release || true
+
+workflows:
+  version: 2
+  build-and-publish:
+    jobs:
+      - build
+      - release:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
