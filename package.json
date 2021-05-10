@@ -28,7 +28,7 @@
   ],
   "devDependencies": {
     "@babel/core": "^7.13.8",
-    "@babel/runtime": "^7.13.10",
+    "@babel/runtime": "^7.14.0",
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/git": "^9.0.0",
     "eslint": "^7.25.0",
