@@ -1,6 +1,6 @@
 {
   "name": "react-native-material-backdrop-modal",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "description": "Material Design \"Backdrop\" component for Android and iOS.",
   "main": "./src/Backdrop",
   "scripts": {
