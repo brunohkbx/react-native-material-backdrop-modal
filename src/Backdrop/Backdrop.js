@@ -106,7 +106,6 @@ const styles = StyleSheet.create({
   },
   children: {
     marginHorizontal: 16,
-    paddingTop: 12,
     flex: 1,
   },
 });
