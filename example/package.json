@@ -8,6 +8,9 @@
   "dependencies": {
     "@expo/vector-icons": "^10.0.0",
     "@react-native-community/masked-view": "^0.1.10",
+    "@react-navigation/drawer": "^5.12.5",
+    "@react-navigation/native": "^5.9.4",
+    "@react-navigation/stack": "^5.14.5",
     "expo": "^39.0.0",
     "prop-types": "^15.7.2",
     "react": "16.13.1",
@@ -16,10 +19,7 @@
     "react-native-paper": "^4.3.1",
     "react-native-platform-touchable": "^1.1.1",
     "react-native-reanimated": "~1.13.0",
-    "react-native-screens": "^2.10.1",
-    "react-navigation": "^4.4.3",
-    "react-navigation-stack": "^2.10.1",
-    "react-use": "^13.2.1"
+    "react-native-screens": "^2.10.1"
   },
   "devDependencies": {
     "@babel/core": "^7.11.6",
