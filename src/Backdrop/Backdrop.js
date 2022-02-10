@@ -18,6 +18,7 @@ const Backdrop = ({
   preset,
   titleStyle,
   backdropStyle,
+  TitleComponent,
 }) => {
   const [flex, setFlex] = useState(focused ? 1 : 0);
 
@@ -53,6 +54,7 @@ const Backdrop = ({
           title={title}
           titleStyle={titleStyle}
           testID="subheader"
+          TitleComponent={TitleComponent}
         />
         <View
           style={{

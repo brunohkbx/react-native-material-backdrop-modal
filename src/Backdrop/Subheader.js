@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import Touchable from 'react-native-platform-touchable';
 import PropTypes from 'prop-types';
 
-const Subheader = ({ disabled, onPress, icon, title, titleStyle }) => {
+const Subheader = ({ disabled, onPress, icon, title, titleStyle, TitleComponent }) => {
   return (
     <Touchable
       disabled={disabled}
@@ -14,7 +14,10 @@ const Subheader = ({ disabled, onPress, icon, title, titleStyle }) => {
       accessibilityRole="button"
     >
       <View style={styles.headerContainer}>
-        <Text style={[styles.title, titleStyle]}>{title}</Text>
+        {TitleComponent ? 
+          (<TitleComponent />) : 
+          (<Text style={[styles.title, titleStyle]}>{title}</Text>)
+        }
         {icon && (
           <Touchable
             onPress={onPress}
