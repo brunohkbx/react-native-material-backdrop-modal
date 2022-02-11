@@ -41,6 +41,7 @@ Subheader.propTypes = {
   onPress: PropTypes.func.isRequired,
   icon: PropTypes.element,
   title: PropTypes.string.isRequired,
+  TitleComponent: PropTypes.elementType,
   titleStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 };
 

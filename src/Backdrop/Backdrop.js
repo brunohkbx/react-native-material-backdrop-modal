@@ -76,6 +76,7 @@ Backdrop.propTypes = {
   icon: PropTypes.element,
   preset: PropTypes.object,
   titleStyle: PropTypes.object,
+  TitleComponent: PropTypes.elementType,
   backdropStyle: PropTypes.object,
 };
 
