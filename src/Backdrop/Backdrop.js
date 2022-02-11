@@ -18,6 +18,7 @@ const Backdrop = ({
   preset,
   titleStyle,
   backdropStyle,
+  TitleComponent,
 }) => {
   const [flex, setFlex] = useState(focused ? 1 : 0);
 
@@ -53,6 +54,7 @@ const Backdrop = ({
           title={title}
           titleStyle={titleStyle}
           testID="subheader"
+          TitleComponent={TitleComponent}
         />
         <View
           style={{
@@ -74,6 +76,7 @@ Backdrop.propTypes = {
   icon: PropTypes.element,
   preset: PropTypes.object,
   titleStyle: PropTypes.object,
+  TitleComponent: PropTypes.elementType,
   backdropStyle: PropTypes.object,
 };
 
@@ -84,6 +87,7 @@ Backdrop.defaultProps = {
   preset: LayoutAnimation.Presets.easeInEaseOut,
   titleStyle: {},
   backdropStyle: {},
+  TitleComponent: null,
 };
 
 const styles = StyleSheet.create({
