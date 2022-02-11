@@ -87,6 +87,7 @@ Backdrop.defaultProps = {
   preset: LayoutAnimation.Presets.easeInEaseOut,
   titleStyle: {},
   backdropStyle: {},
+  TitleComponent: null,
 };
 
 const styles = StyleSheet.create({
