@@ -73,8 +73,8 @@ Backdrop.propTypes = {
   title: PropTypes.string.isRequired,
   icon: PropTypes.element,
   preset: PropTypes.object,
-  titleStyle: PropTypes.object,
-  backdropStyle: PropTypes.object,
+  titleStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+  backdropStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 };
 
 Backdrop.defaultProps = {
