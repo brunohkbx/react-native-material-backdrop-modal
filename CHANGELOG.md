@@ -1,3 +1,10 @@
+## [1.6.4](https://github.com/brunohkbx/react-native-material-backdrop-modal/compare/v1.6.3...v1.6.4) (2022-11-28)
+
+
+### Bug Fixes
+
+* PropTypes for styles;accept arrays ([f82977f](https://github.com/brunohkbx/react-native-material-backdrop-modal/commit/f82977f0ce123dc6ddb72f34e3913e7b95f609f3))
+
 ## [1.6.3](https://github.com/brunohkbx/react-native-material-backdrop-modal/compare/v1.6.2...v1.6.3) (2021-05-15)
 
 
